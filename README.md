@@ -126,11 +126,37 @@ Del anterior diagrama de componentes (de alto nivel), se desprendió el siguient
 
 	Nota: puede basarse en el formato jSON mostrado en el navegador al consultar una orden con el método GET.
 
+	* Ejecución en la linea de comando
+	![](img/agregandoPOST.png)
+
+	* Comando utilizado
+	```	
+	$ curl -i -X POST -HContent-Type:application/json -HAccept:application/json http://localhost:8080/blueprints/ -d '{"author":"Miguel", "points":[{"x":78, "y":78},{"x":123, "y":123}], "name":"Plano5"}'
+
+	```
 
 3. Teniendo en cuenta el autor y numbre del plano registrado, verifique que el mismo se pueda obtener mediante una petición GET al recurso '/blueprints/{author}/{bpname}' correspondiente.
 
+* Prueba en el browser
+![](img/pruebaPOST.png)
+
 4. Agregue soporte al verbo PUT para los recursos de la forma '/blueprints/{author}/{bpname}', de manera que sea posible actualizar un plano determinado.
 
+* Método donde esta presente PUT
+![](img/metodoPut.png)
+
+* Prueba antes de actualizar los valores
+![](img/antesdelPUT.png)
+
+* Ejecución del comando
+![](img/comandoPUT.png)
+
+```	
+	$ curl -i -X PUT -HContent-Type:application/json -HAccept:application/json http://localhost:8080/blueprints/Santiago/Plano1 -d '{"author":"Santiago", "points":[{"x":78, "y":78},{"x":123, "y":123}], "name":"Plano1"}'
+
+```
+* Prueba después de utilizar el comando
+![](img/despuesdePUT.png)
 
 ### Parte III
 

@@ -14,6 +14,7 @@ import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,6 +23,7 @@ import org.springframework.http.MediaType;
 
 import edu.eci.arsw.blueprints.model.Blueprint;
 import edu.eci.arsw.blueprints.persistence.BlueprintNotFoundException;
+import edu.eci.arsw.blueprints.persistence.BlueprintPersistenceException;
 import edu.eci.arsw.blueprints.services.BlueprintsServices;
 
 /**
@@ -71,6 +73,32 @@ public class BlueprintAPIController {
         }
     } 
     
+    @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> manejadorPostRecursoXX(@RequestBody Blueprint blueprint){
+        try {
+            bs.addNewBlueprint(blueprint);
+            return new ResponseEntity<>(HttpStatus.CREATED);
+        }catch (BlueprintNotFoundException | BlueprintPersistenceException ex) {
+            //Logger.getLogger(BlueprintAPIController.class.getName()).log(Level.SEVERE, null, ex);
+            return new ResponseEntity<>("Could not be registered",HttpStatus.FORBIDDEN);
+        }
+    }
+
+    @RequestMapping(path = "/{author}/{bpname}", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> manejadorPutRecursoXX(@PathVariable String author, @PathVariable String bpname, @RequestBody Blueprint blueprint) throws BlueprintNotFoundException{
+        Blueprint blueprintCreate = null;
+        try {
+            blueprintCreate = bs.getBlueprint(author, bpname);
+            blueprintCreate.setAuthor(blueprint.getAuthor());
+            blueprintCreate.setName(blueprint.getName());
+            blueprintCreate.setPoints(blueprint.getPoints());
+
+            return new ResponseEntity<>(HttpStatus.ACCEPTED);
+        }catch (BlueprintNotFoundException ex) {
+            //Logger.getLogger(BlueprintAPIController.class.getName()).log(Level.SEVERE, null, ex);
+            return new ResponseEntity<>("Working...",HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    } 
 
 }
 
