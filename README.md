@@ -1,6 +1,6 @@
 ### Escuela Colombiana de Ingeniería
 ### Arquiecturas de Software
-
+### Desarrollado por: Daniel Santiago Gómez Zabala
 ## Construción de un cliente 'grueso' con un API REST, HTML5, Javascript y CSS3. Parte I.
 
 ### Trabajo individual o en parejas. A quienes tuvieron malos resultados en el parcial anterior se les recomienda hacerlo individualmente.
@@ -67,8 +67,12 @@
     ```
     http://localhost:8080/index.html
     ```
-    2. Al abrir la consola de desarrollador del navegador, NO deben aparecer mensajes de error 404 (es decir, que las librerías de JavaScript se cargaron correctamente).
 
+    * La página se ve desde el browser con el URL que se visualiza anteriormente
+    ![](img/indexBrowser.png)
+    2. Al abrir la consola de desarrollador del navegador, NO deben aparecer mensajes de error 404 (es decir, que las librerías de JavaScript se cargaron correctamente).
+    * Al abrir la consola de desarrollador del navegador, no se visualiza ningún error.
+    ![](img/ConsoladeDesarrollador.png)
 ## Front-End - Lógica
 
 1. Ahora, va a crear un Módulo JavaScript que, a manera de controlador, mantenga los estados y ofrezca las operaciones requeridas por la vista. Para esto tenga en cuenta el [patrón Módulo de JavaScript](https://toddmotto.com/mastering-the-module-pattern/), y cree un módulo en la ruta static/js/app.js .
