@@ -4,13 +4,15 @@
         <title>Blueprints</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+        
+        <script src="js/apimock.js"></script>
+        <script src="js/app.js"></script>
+
         <script src="/webjars/jquery/jquery.min.js"></script>
         <script src="/webjars/bootstrap/5.3.2/js/bootstrap.min.js"></script>
         <link rel="stylesheet"
           href="/webjars/bootstrap/5.3.2/css/bootstrap.min.css" />
-        <script src="js/apimock.js"></script>
-        <script src="js/app.js"></script>
+
     </head>
 <body>
     <div style="margin-left: 1%;">
@@ -18,9 +20,9 @@
         <div class="card" style="width:50%; margin-bottom:5%;">
             <div class="card-body">
                 <div class="mb-3"> 
-                    <label for="author">Autor:</label>
+                    <label id= "name" for="author">Author:</label>
                     <input type="text" id="author" name="author">
-                    <button id = "authorNameButton" class="btn secondary" onclick="getBlueprints()">Get Blueprints</button>
+                    <button type="button" onclick="modulo.setplano(document.getElementById('author').value)">Get Blueprints</button>
                 </div>      
             </div>
         </div>
@@ -44,4 +46,5 @@
     </div>
     
 </body>
+
 </html>
