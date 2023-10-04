@@ -100,9 +100,17 @@
 
     * Sobre cualquiera de los dos listados (el original, o el transformado mediante 'map'), aplique un 'reduce' que calcule el número de puntos. Con este valor, use jQuery para actualizar el campo correspondiente dentro del DOM.
 
+    ![](img/LAB6/Actualización%20de%20tabla.png)
+
 5. Asocie la operación antes creada (la de app.js) al evento 'on-click' del botón de consulta de la página.
 
+    * Agregamos el evento OnClick dentro del HTML
+    ![](img/LAB6/onclick.png)
+
 6. Verifique el funcionamiento de la aplicación. Inicie el servidor, abra la aplicación HTML5/JavaScript, y rectifique que al ingresar un usuario existente, se cargue el listado del mismo.
+
+    * Verificamos el funcionamiento de la aplicación
+    ![](img/LAB6/callBackfuncionando.png)
 
 ## Para la próxima semana
 

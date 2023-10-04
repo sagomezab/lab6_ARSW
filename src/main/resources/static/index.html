@@ -22,12 +22,13 @@
                 <div class="mb-3"> 
                     <label id= "name" for="author">Author:</label>
                     <input type="text" id="author" name="author">
-                    <button type="button" onclick="modulo.setplano(document.getElementById('author').value)">Get Blueprints</button>
+                    <button type="button" onclick="app.getBlueprintsByAuthor()">Get Blueprints</button>
                 </div>      
             </div>
         </div>
     </div>
     <div>
+        <label id= "nameTable" style="font-size: 18px; font-weight: bold;">Author:</label>
         <table id="blueprintsTable" class = "table">
             <thead>
                 <tr>
@@ -41,7 +42,8 @@
             </tbody>
         </table>
         <div>
-            <label id="points">Total Points</label>
+            <label style="font-size: 18px; font-weight: bold;">Total Points:</label>
+            <label id="points"></label>
         </div>
     </div>
     
